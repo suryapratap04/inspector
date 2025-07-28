@@ -10,13 +10,14 @@ import {
   MastraMCPServerDefinition,
   StdioServerDefinition,
   HttpServerDefinition,
+  oauthTokens,
 } from "@/lib/types";
 import { useLogger } from "./use-logger";
 
 export interface ServerWithName {
   name: string;
   config: MastraMCPServerDefinition;
-  oauthTokens?: any;
+  oauthTokens?: oauthTokens;
   lastConnectionTime: Date;
   connectionStatus:
     | "connected"
