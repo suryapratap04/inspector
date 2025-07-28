@@ -156,12 +156,12 @@ export function ServerConnectionCard({
                     server.connectionStatus === "connected"
                       ? "#10b981"
                       : server.connectionStatus === "connecting"
-                        ? "#3b82f6"
-                        : server.connectionStatus === "oauth-flow"
-                          ? "#a855f7"
-                          : server.connectionStatus === "failed"
-                            ? "#ef4444"
-                            : "#9ca3af",
+                      ? "#3b82f6"
+                      : server.connectionStatus === "oauth-flow"
+                      ? "#a855f7"
+                      : server.connectionStatus === "failed"
+                      ? "#ef4444"
+                      : "#9ca3af",
                 }}
               />
               <div className="min-w-0 flex-1">
@@ -245,8 +245,8 @@ export function ServerConnectionCard({
                 {isErrorExpanded
                   ? server.lastError
                   : server.lastError.length > 100
-                    ? `${server.lastError.substring(0, 100)}...`
-                    : server.lastError}
+                  ? `${server.lastError.substring(0, 100)}...`
+                  : server.lastError}
               </div>
               {server.lastError.length > 100 && (
                 <button
@@ -349,18 +349,18 @@ export function ServerConnectionCard({
                       </span>
                       <div className="font-mono text-foreground break-all bg-muted/30 p-2 rounded mt-1 relative group">
                         <div className="pr-8">
-                          {server.oauthTokens.client_id || "N/A"}
+                          {server.oauthTokens.refresh_token || "N/A"}
                         </div>
                         <button
                           onClick={() =>
                             copyToClipboard(
-                              server.oauthTokens?.client_id || "N/A",
+                              server.oauthTokens?.refresh_token || "N/A",
                               "clientId"
                             )
                           }
                           className="absolute top-1 right-1 p-1 text-muted-foreground/50 hover:text-foreground transition-colors cursor-pointer"
                         >
-                          {copiedField === "clientId" ? (
+                          {copiedField === "refreshToken" ? (
                             <Check className="h-3 w-3 text-green-500" />
                           ) : (
                             <Copy className="h-3 w-3" />
@@ -390,8 +390,8 @@ export function ServerConnectionCard({
                           tokenStatus.isExpired
                             ? "text-red-500"
                             : tokenStatus.isExpiringSoon
-                              ? "text-yellow-500"
-                              : "text-green-500"
+                            ? "text-yellow-500"
+                            : "text-green-500"
                         }`}
                       >
                         {formatTimeRemaining(tokenStatus.timeLeft)}
