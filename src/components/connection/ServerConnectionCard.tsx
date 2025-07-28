@@ -345,7 +345,7 @@ export function ServerConnectionCard({
                     </div>
                     <div>
                       <span className="text-muted-foreground font-medium">
-                        Client ID:
+                        Refresh Token:
                       </span>
                       <div className="font-mono text-foreground break-all bg-muted/30 p-2 rounded mt-1 relative group">
                         <div className="pr-8">
@@ -355,7 +355,7 @@ export function ServerConnectionCard({
                           onClick={() =>
                             copyToClipboard(
                               server.oauthTokens?.refresh_token || "N/A",
-                              "clientId"
+                              "refreshToken"
                             )
                           }
                           className="absolute top-1 right-1 p-1 text-muted-foreground/50 hover:text-foreground transition-colors cursor-pointer"
